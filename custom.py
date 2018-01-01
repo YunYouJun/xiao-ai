@@ -22,6 +22,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '你好，我是云游酱的女朋友~')
       elif '你是谁' in content:
         bot.SendTo(contact, '你好，我是小爱，云游酱的女朋友~')
+      elif '叫一个' in content:
+        bot.SendTo(contact, '嘤嘤嘤~')
       elif '智障' in content:
         bot.SendTo(contact, '你才智障！')
       elif '早' in content: 
