@@ -33,6 +33,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '你好，我是云游酱的女朋友~')
       elif '你是谁' in content:
         bot.SendTo(contact, '你好，我是小爱，云游酱的女朋友~')
+      elif '被绿了' in content:
+        bot.SendTo(contact, '当然选择原谅啊！')
       elif '喜欢谁' in content:
         if '不' in content:
           bot.SendTo(contact, '小爱还没考虑那么多……')
@@ -84,6 +86,7 @@ def onQQMessage(bot, contact, member, content):
           handsome = gm.card
         bot.SendTo(contact, handsome + '最帅！')
       else:
+        count = count + 1
         if(count > 3 and count < 6):
           bot.SendTo(contact, '没事，别老叫我成不！')
         elif(count > 6):
@@ -91,7 +94,6 @@ def onQQMessage(bot, contact, member, content):
           count = 0
         else:
           bot.SendTo(contact, '干啥呀？')
-        count = count + 1
 
   if '睿神不在' in content or '云游不在' in content or '云游酱不在' in content or '云游君不在' in content:
     bot.SendTo(contact, '略略略')
