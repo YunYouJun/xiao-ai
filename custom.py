@@ -2,6 +2,9 @@
 import random
 from qqbot import qqbotsched
 
+StopFlag = 0
+count = 0
+
 def onQQMessage(bot, contact, member, content):
   global StopFlag
   global count
@@ -78,7 +81,7 @@ def onQQMessage(bot, contact, member, content):
         content = content.replace('小爱', '')
         GroupName = content[0:content.find('群')]
         g = bot.List('group', ':like:' + GroupName)[0]
-        i = random.randint(0, len(bot.List(g)))
+        i = random.randint(0, len(bot.List(g))-1)
         gm = bot.List(g)[i]
         if gm.card == '':
           handsome = gm.name
