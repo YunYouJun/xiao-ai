@@ -54,12 +54,17 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '当然呀！')
       elif '启动自爆程序' in content:
         bot.SendTo(contact, '不听不听!')
+      elif '谁最帅' in content:
+        gm = bot.List('group-member', '182332107')[random.random() * len(bot.List('group-member', '182332107'))]
+        bot.SendTo(contact, gm.name + '最帅！')
       else:
         bot.SendTo(contact, '干啥呀？')
 
-    if '睿神不在' in content or '云游不在' in content or '云游酱不在' in content or '云游君不在' in content:
-        bot.SendTo(contact, '略略略')
-    elif '云游的女朋友' in content:
-        bot.SendTo(contact, '叫我干啥？')
-    elif '不太好' in content:
-      bot.SendTo(contact, '怎么不好？')
+  if '睿神不在' in content or '云游不在' in content or '云游酱不在' in content or '云游君不在' in content:
+      bot.SendTo(contact, '略略略')
+  elif '云游的女朋友' in content:
+      bot.SendTo(contact, '叫我干啥？')
+  elif '不太好' in content:
+    bot.SendTo(contact, '怎么不好？')
+
+
