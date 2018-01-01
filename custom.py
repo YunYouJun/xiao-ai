@@ -84,7 +84,6 @@ def onQQMessage(bot, contact, member, content):
           handsome = gm.card
         bot.SendTo(contact, handsome + '最帅！')
       else:
-        count = count + 1
         if(count > 3 and count < 6):
           bot.SendTo(contact, '没事，别老叫我成不！')
         elif(count > 6):
@@ -92,6 +91,7 @@ def onQQMessage(bot, contact, member, content):
           count = 0
         else:
           bot.SendTo(contact, '干啥呀？')
+        count = count + 1
 
   if '睿神不在' in content or '云游不在' in content or '云游酱不在' in content or '云游君不在' in content:
     bot.SendTo(contact, '略略略')
