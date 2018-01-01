@@ -9,12 +9,12 @@ def onQQMessage(bot, contact, member, content):
   elif content == '-stop':
     bot.SendTo(contact, '小爱暂且退下啦~')
     stop = 1
+  elif content == '-restart':
+    bot.SendTo(contact, '小爱重启啦~')
+    bot.Restart()
   elif content == 'XiaoAi-stop':
     bot.SendTo(contact, '小爱终止~')
     bot.Stop()
-  elif content == 'XiaoAi-restart':
-    bot.SendTo(contact, '小爱重启啦~')
-    bot.Restart()
 
   if stop = 0
     if '小爱' in content and not bot.isMe(contact, member) :
