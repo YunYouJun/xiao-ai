@@ -69,6 +69,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '那是当然的！')
       elif '我可爱吗' in content:
         bot.SendTo(contact, '当然可爱呀！')
+      elif '这么可爱' in content:
+        bot.SendTo(contact, '吃可爱长大的呀！')
       elif '你喜欢云游吗' in content:
         bot.SendTo(contact, '当然呀！')
       elif '启动自爆程序' in content:
@@ -105,7 +107,7 @@ def onQQMessage(bot, contact, member, content):
   elif '不太好' in content:
     bot.SendTo(contact, '怎么不好？')
 
-@qqbotsched(hour='12,0', minute='0')
+@qqbotsched(hour='12,13', minute='0')
 def mytask(bot):
     gl = bot.List('group', '182332107')
     if gl is not None:
