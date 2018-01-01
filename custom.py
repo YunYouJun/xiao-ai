@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
+global StopFlag
 def onQQMessage(bot, contact, member, content):
-  global StopFlag
   if content == '-hello':
     bot.SendTo(contact, '你好，我是云游酱的女朋友~')
   elif content == '-start':
@@ -16,8 +16,8 @@ def onQQMessage(bot, contact, member, content):
     bot.SendTo(contact, '小爱终止~')
     bot.Stop()
 
-  if StopFlag == 0
-    if '小爱' in content and not bot.isMe(contact, member) :
+  if StopFlag == 0:
+    if '小爱' in content and not bot.isMe(contact, member):
       if '你好' in content:
         bot.SendTo(contact, '你好，我是云游酱的女朋友~')
       elif '你是谁' in content:
