@@ -35,6 +35,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '你好，我是小爱，云游酱的女朋友~')
       elif '喜欢谁' in content:
         bot.SendTo(contact, '当然是云游酱啦~')
+      elif '不喜欢谁' in content:
+        bot.SendTo(contact, '不告诉你')
       elif '吃' in content and '吗' in content or '吧' in content:
         if '鸡' in content:
           bot.SendTo(contact, '不吃，那有啥可吃的，都是皮。')
