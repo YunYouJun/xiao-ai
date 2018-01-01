@@ -12,6 +12,9 @@ def onQQMessage(bot, contact, member, content):
   elif content == '-restart':
     bot.SendTo(contact, '那小爱重启啦~')
     bot.Restart()
+  elif content == '-fuck':
+    bot.SendTo(contact, '那……USB接口也可以吗？')
+    bot.Restart()
   elif content == 'XiaoAi-stop':
     bot.SendTo(contact, '小爱终止~')
     bot.Stop()
