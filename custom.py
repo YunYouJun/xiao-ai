@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import random
+from qqbot import qqbotsched
+
 def onQQMessage(bot, contact, member, content):
   global StopFlag
   global count
@@ -21,6 +24,9 @@ def onQQMessage(bot, contact, member, content):
     bot.SendTo(contact, '小爱终止~')
     bot.Stop()
 
+  if '@ME' in content:
+    bot.SendTo(contact, member.name+'，艾特我干嘛呢？')
+
   if StopFlag == 0:
     if '小爱' in content and not bot.isMe(contact, member):
       if '你好' in content:
@@ -28,7 +34,10 @@ def onQQMessage(bot, contact, member, content):
       elif '你是谁' in content:
         bot.SendTo(contact, '你好，我是小爱，云游酱的女朋友~')
       elif '吃' in content and '吗' in content or '吧' in content:
-        bot.SendTo(contact, '小爱是机器人，不用吃东西的~')
+        if '鸡' in content:
+          bot.SendTo(contact, '不吃，那有啥可吃的，都是皮。')
+        else:
+            bot.SendTo(contact, '小爱是机器人，不用吃东西的~')
       elif '叫一个' in content:
         if '再' in content:
           bot.SendTo(contact, '不叫，略略略')
@@ -42,8 +51,6 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '晚安~ 做个好梦~')
       elif '我回来' in content:
         bot.SendTo(contact, '您是要先吃饭，还是要先洗澡，还是要先吃我~')
-      elif '吃鸡吗' in content:
-        bot.SendTo(contact, '不吃，那有啥可吃的，都是皮。')
       elif '新年快乐' in content or '元旦快乐' in content:
         bot.SendTo(contact, '你也是哦，新年快乐哟~')
       elif '云游呢' in content:
@@ -57,10 +64,14 @@ def onQQMessage(bot, contact, member, content):
       elif '启动自爆程序' in content:
         bot.SendTo(contact, '不听不听!')
       elif '谁最帅' in content:
-        g = bot.List('group', '182332107')[0]
-        i = int(random.random() * len(g))
+        content = content.replace(' ','')
+        content = content.replace('，','')
+        content = content.replace(',','')
+        content = content.replace('小爱', '')
+        GroupName = content[0:content.find('群')]
+        g = bot.List('group', ':like:' + GroupName)[0]
+        i = random.randint(0, len(bot.List(g)))
         gm = bot.List(g)[i]
-        bot.List('group')
         bot.SendTo(contact, gm.name + '最帅！')
       else:
         count = count + 1
@@ -77,4 +88,9 @@ def onQQMessage(bot, contact, member, content):
   elif '不太好' in content:
     bot.SendTo(contact, '怎么不好？')
 
-
+@qqbotsched(hour='0,0', minute='0')
+def mytask(bot):
+    gl = bot.List('group', '275834309')
+    if gl is not None:
+        for group in gl:
+            bot.SendTo(group, '该睡觉啦！')
