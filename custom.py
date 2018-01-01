@@ -73,7 +73,7 @@ def onQQMessage(bot, contact, member, content):
         g = bot.List('group', ':like:' + GroupName)[0]
         i = random.randint(0, len(bot.List(g)))
         gm = bot.List(g)[i]
-        if gm.card == ''
+        if gm.card == '':
           handsome = gm.name
         else:
           handsome = gm.card
