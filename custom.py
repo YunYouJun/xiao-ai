@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+stop = 0
 def onQQMessage(bot, contact, member, content):
   if content == '-hello':
     bot.SendTo(contact, '你好，我是云游酱的女朋友~')
