@@ -1,12 +1,22 @@
 # -*- coding: utf-8 -*-
 
 def onQQMessage(bot, contact, member, content):
-    if content == '-hello':
-        bot.SendTo(contact, '你好，我是云游酱的女朋友~')
-    elif content == '-stop':
-        bot.SendTo(contact, '小爱退下啦~')
-        bot.Stop()
+  if content == '-hello':
+    bot.SendTo(contact, '你好，我是云游酱的女朋友~')
+  elif content == '-start':
+    bot.SendTo(contact, '小爱启动完毕~')
+    stop = 0
+  elif content == '-stop':
+    bot.SendTo(contact, '小爱暂且退下啦~')
+    stop = 1
+  elif content == 'XiaoAi-stop':
+    bot.SendTo(contact, '小爱终止~')
+    bot.Stop()
+  elif content == 'XiaoAi-restart':
+    bot.SendTo(contact, '小爱重启啦~')
+    bot.Restart()
 
+  if stop = 0
     if '小爱' in content and not bot.isMe(contact, member) :
       if '你好' in content:
         bot.SendTo(contact, '你好，我是云游酱的女朋友~')
@@ -24,6 +34,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '当然可爱呀！')
       elif '你喜欢云游吗' in content:
         bot.SendTo(contact, '当然呀！')
+      elif '启动自爆程序' in content:
+        bot.SendTo(contact, '不听不听!')
       else:
         bot.SendTo(contact, '干啥呀？')
 
