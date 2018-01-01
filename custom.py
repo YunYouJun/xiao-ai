@@ -58,11 +58,11 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '不听不听!')
       elif '谁最帅' in content:
         # i = int(random.random() * len(bot.List('group-member', '182332107')))
-        gm = bot.List('group', '182332107')[0]
+        gm = bot.List('group-member', '182332107')[2]
         bot.List('group')
         bot.SendTo(contact, gm.name + '最帅！')
       else:
-        count += 1
+        count = count + 1
         if(count > 3):
           bot.SendTo(contact, '没事，别老叫我成不！')
           count = 0
