@@ -1,6 +1,6 @@
+# coding=utf-8
 # start_webkook.py
 #!/usr/bin/env python
-# coding=utf-8
 from wsgiref.simple_server import make_server
 # 导入我们自己编写的application函数
 from webhook import application
