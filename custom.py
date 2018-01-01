@@ -67,12 +67,13 @@ def onQQMessage(bot, contact, member, content):
         content = content.replace(' ','')
         content = content.replace('，','')
         content = content.replace(',','')
+        content = content.replace('@', '')
         content = content.replace('小爱', '')
         GroupName = content[0:content.find('群')]
         g = bot.List('group', ':like:' + GroupName)[0]
         i = random.randint(0, len(bot.List(g)))
         gm = bot.List(g)[i]
-        bot.SendTo(contact, gm.name + '最帅！')
+        bot.SendTo(contact, gm.card + '最帅！')
       else:
         count = count + 1
         if(count > 3):
