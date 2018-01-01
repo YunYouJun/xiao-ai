@@ -22,7 +22,7 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '你好，我是云游酱的女朋友~')
       elif '你是谁' in content:
         bot.SendTo(contact, '你好，我是小爱，云游酱的女朋友~')
-      elif '吃' in content and '吗' in content:
+      elif '吃' in content and '吗' in content or '吧' in content:
         bot.SendTo(contact, '小爱是机器人，不用吃东西的~')
       elif '叫一个' in content:
         if '再' in content:
