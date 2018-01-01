@@ -105,9 +105,9 @@ def onQQMessage(bot, contact, member, content):
   elif '不太好' in content:
     bot.SendTo(contact, '怎么不好？')
 
-@qqbotsched(hour='0,0', minute='0')
+@qqbotsched(hour='12,0', minute='0')
 def mytask(bot):
-    gl = bot.List('group', '275834309')
+    gl = bot.List('group', '182332107')
     if gl is not None:
         for group in gl:
-            bot.SendTo(group, '该睡觉啦！')
+            bot.SendTo(group, '多多同学该睡觉啦！')
