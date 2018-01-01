@@ -57,8 +57,9 @@ def onQQMessage(bot, contact, member, content):
       elif '启动自爆程序' in content:
         bot.SendTo(contact, '不听不听!')
       elif '谁最帅' in content:
-        # i = int(random.random() * len(bot.List('group', '182332107')[0]))
-        gm = bot.List(bot.List('group', '182332107')[0])[2]
+        g = bot.List('group', '182332107')[0]
+        i = int(random.random() * len(g))
+        gm = bot.List(g)[i]
         bot.List('group')
         bot.SendTo(contact, gm.name + '最帅！')
       else:
