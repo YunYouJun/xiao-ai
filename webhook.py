@@ -8,3 +8,4 @@ def application(environ, start_response):
     os.system('git pull')
     os.system('qq plug custom')
     print('XiaoAi pull finish')
+    return 'Hello,XiaoAi'
