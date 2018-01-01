@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 def onQQMessage(bot, contact, member, content):
   global StopFlag
+  global count
   if content == '-hello':
     bot.SendTo(contact, '你好，我是云游酱的女朋友~')
   elif content == '-start':
     bot.SendTo(contact, '小爱启动完毕~')
     StopFlag = 0
+    count = 0
   elif content == '-stop':
     bot.SendTo(contact, '小爱暂且退下啦~')
     StopFlag = 1
@@ -56,15 +58,21 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '不听不听!')
       elif '谁最帅' in content:
         # i = int(random.random() * len(bot.List('group-member', '182332107')))
-        gm = bot.List('group-member', '182332107')[0]
+        gm = bot.List('group', '182332107')[0]
+        bot.List('group')
         bot.SendTo(contact, gm.name + '最帅！')
       else:
-        bot.SendTo(contact, '干啥呀？')
+        count += 1
+        if(count > 3):
+          bot.SendTo(contact, '没事，别老叫我成不！')
+          count = 0
+        else:
+          bot.SendTo(contact, '干啥呀？')
 
   if '睿神不在' in content or '云游不在' in content or '云游酱不在' in content or '云游君不在' in content:
-      bot.SendTo(contact, '略略略')
+    bot.SendTo(contact, '略略略')
   elif '云游的女朋友' in content:
-      bot.SendTo(contact, '叫我干啥？')
+    bot.SendTo(contact, '叫我干啥？')
   elif '不太好' in content:
     bot.SendTo(contact, '怎么不好？')
 
