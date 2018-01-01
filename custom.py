@@ -73,7 +73,11 @@ def onQQMessage(bot, contact, member, content):
         g = bot.List('group', ':like:' + GroupName)[0]
         i = random.randint(0, len(bot.List(g)))
         gm = bot.List(g)[i]
-        bot.SendTo(contact, gm.card + '最帅！')
+        if gm.card == ''
+          handsome = gm.name
+        else:
+          handsome = gm.card
+        bot.SendTo(contact, handsome + '最帅！')
       else:
         count = count + 1
         if(count > 3):
