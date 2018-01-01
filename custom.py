@@ -44,7 +44,7 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '你也是哦，新年快乐哟~')
       elif '云游呢' in content:
         bot.SendTo(contact, '不告诉你！')
-      elif '睿神帅吗' in content:
+      elif '睿神帅吗' in content or '云游帅吗' in content:
         bot.SendTo(contact, '那是当然的！')
       elif '我可爱吗' in content:
         bot.SendTo(contact, '当然可爱呀！')
