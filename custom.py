@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
-stop = 0
 def onQQMessage(bot, contact, member, content):
   if content == '-hello':
     bot.SendTo(contact, '你好，我是云游酱的女朋友~')
   elif content == '-start':
     bot.SendTo(contact, '小爱启动完毕~')
-    stop = 0
+    StopFlag = 0
   elif content == '-stop':
     bot.SendTo(contact, '小爱暂且退下啦~')
-    stop = 1
+    StopFlag = 1
   elif content == '-restart':
     bot.SendTo(contact, '那小爱重启啦~')
     bot.Restart()
@@ -16,7 +15,7 @@ def onQQMessage(bot, contact, member, content):
     bot.SendTo(contact, '小爱终止~')
     bot.Stop()
 
-  if stop == 0
+  if StopFlag == 0
     if '小爱' in content and not bot.isMe(contact, member) :
       if '你好' in content:
         bot.SendTo(contact, '你好，我是云游酱的女朋友~')
