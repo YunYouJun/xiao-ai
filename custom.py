@@ -138,7 +138,7 @@ def mytask(bot):
             bot.SendTo(group, '多多同学该睡觉啦！')
 
 @qqbotsched(hour='23', minute='0')
-def mytask(bot):
+def mytask2(bot):
     gl = bot.List('group', '幻星科幻')
     if gl is not None:
         for group in gl:
