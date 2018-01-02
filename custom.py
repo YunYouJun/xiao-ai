@@ -106,6 +106,12 @@ def onQQMessage(bot, contact, member, content):
         else:
           handsome = gm.card
         bot.SendTo(contact, handsome + '最帅！')
+      elif '打' in content and '的头' in content:
+        name = content[content.find('打')+1:content.find('的头')]
+        if '云游' in name or '睿神' in name:
+          bot.SendTo(contact, '不行，他可是我最喜欢的主人！')
+        else:
+          bot.SendTo(contact, '我小爱今天要打爆' + name + '的狗头！')
       else:
         count = count + 1
         if(count > 3 and count < 6):
