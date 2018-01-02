@@ -86,6 +86,8 @@ def onQQMessage(bot, contact, member, content):
       elif '启动自爆程序' in content:
         bot.SendTo(contact, '不听不听!')
 
+      elif '科技部' in content:
+        bot.SendTo(contact, '科技部天下第一！')
       elif '章鱼哥' in content:
         bot.SendTo(contact, '我准备好了！')
 
