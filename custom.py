@@ -92,8 +92,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '我准备好了！')
 
 
-      elif '打' in content and '的头' in content:
-        name = content[content.find('打')+1:content.find('的头')]
+      elif '打' in content and '的' in content and '头' in content:
+        name = content[content.find('打')+1:content.find('的')]
         if '云游' in name or '睿神' in name:
           bot.SendTo(contact, '不行，他可是我最喜欢的主人！')
         elif name is not None:
