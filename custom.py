@@ -14,18 +14,26 @@ def onQQMessage(bot, contact, member, content):
     bot.SendTo(contact, '小爱启动完毕~')
     StopFlag = 0
     count = 0
-  elif content == '-stop':
+  elif content == '-wake':
+    bot.SendTo(contact, '小爱唤醒完毕~')
+    StopFlag = 0
+    count = 4
+  elif content == '-stop' or content == '-sleep':
     bot.SendTo(contact, '小爱暂且退下啦~')
     StopFlag = 1
   elif content == '-restart':
     bot.SendTo(contact, '那小爱重启啦~')
     bot.Restart()
+  elif content == '-like':
+    bot.SendTo(contact, '云游酱')
   elif content == '-fuck':
     bot.SendTo(contact, '那……USB接口也可以吗？')
     bot.Restart()
   elif content == 'XiaoAi-stop':
     bot.SendTo(contact, '小爱终止~')
     bot.Stop()
+  elif content == '-whosyourdaddy':
+    bot.SendTo(contact, '就是我小爱！')
 
   if '@ME' in content:
     bot.SendTo(contact, member.name+'，艾特我干嘛呢？')
@@ -65,6 +73,8 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '你也是哦，新年快乐哟~')
       elif '云游呢' in content:
         bot.SendTo(contact, '不告诉你！')
+      elif '多多' in content:
+        bot.SendTo(contact, '看！灰机！')
       elif '睿神帅吗' in content or '云游帅吗' in content:
         bot.SendTo(contact, '那是当然的！')
       elif '我可爱吗' in content:
