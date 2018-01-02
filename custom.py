@@ -25,7 +25,7 @@ def onQQMessage(bot, contact, member, content):
     bot.SendTo(contact, '那小爱重启啦~')
     bot.Restart()
   elif content == '-like':
-    bot.SendTo(contact, '云游酱')
+    bot.SendTo(contact, '云游酱~')
   elif content == '-fuck':
     bot.SendTo(contact, '那……USB接口也可以吗？')
     bot.Restart()
@@ -85,6 +85,10 @@ def onQQMessage(bot, contact, member, content):
         bot.SendTo(contact, '当然呀！')
       elif '启动自爆程序' in content:
         bot.SendTo(contact, '不听不听!')
+
+      elif '章鱼哥' in content:
+        bot.SendTo(contact, '我准备好了！')
+
       elif '谁最帅' in content:
         content = content.replace(' ','')
         content = content.replace('，','')
@@ -119,7 +123,14 @@ def onQQMessage(bot, contact, member, content):
 
 @qqbotsched(hour='12,13', minute='0')
 def mytask(bot):
-    gl = bot.List('group', '182332107')
+    gl = bot.List('group', '幻星科幻')
     if gl is not None:
         for group in gl:
             bot.SendTo(group, '多多同学该睡觉啦！')
+
+@qqbotsched(hour='23', minute='0')
+def mytask(bot):
+    gl = bot.List('group', '幻星科幻')
+    if gl is not None:
+        for group in gl:
+            bot.SendTo(group, '各位晚安~')
