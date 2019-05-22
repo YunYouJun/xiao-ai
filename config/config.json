@@ -1,0 +1,8 @@
+{
+  "general": {
+      "serve_data_files": true,
+      "ws_reverse_api_url": "ws://172.17.0.1:8080/ws/api/",
+      "ws_reverse_event_url": "ws://172.17.0.1:8080/ws/event/",
+      "use_ws_reverse": true
+  }
+}
