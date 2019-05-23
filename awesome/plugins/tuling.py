@@ -1,3 +1,4 @@
+
 import json
 from typing import Optional
 
@@ -6,6 +7,12 @@ from aiocqhttp.message import escape
 from nonebot import on_command, CommandSession
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from nonebot.helpers import context_id, render_expression
+
+__plugin_name__ = '智能聊天'
+__plugin_usage__ = r"""
+智能聊天
+直接跟我聊天即可～
+""".strip()
 
 # 定义无法获取图灵回复时的「表达（Expression）」
 EXPR_DONT_UNDERSTAND = (
