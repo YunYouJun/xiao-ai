@@ -19,7 +19,7 @@ async def _():
         pass
 
 
-@nonebot.scheduler.scheduled_job('interval', minutes=10)
+@nonebot.scheduler.scheduled_job('interval', minutes=30)
 async def _():
     bot = nonebot.get_bot()
     now = datetime.now(pytz.timezone('Asia/Shanghai'))
