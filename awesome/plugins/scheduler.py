@@ -19,14 +19,12 @@ async def _():
         pass
 
 
-drink_time = 0
 @nonebot.scheduler.scheduled_job('interval', minutes=10)
 async def _():
-    global drink_time
-    drink_time += 1
     bot = nonebot.get_bot()
-    # now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    now = datetime.now(pytz.timezone('Asia/Shanghai'))
+    drink_time  = now.hour * 2  + now.minute // 30
     try:
-        await bot.send_group_msg(group_id=group['feiwu'], message=f'大家好，我是本群的“提醒喝水小助手”，这是今天的第{drink_time}轮。希望此刻看到消息的人可以和我一起来喝一杯水。10分钟后的我继续提醒大家喝水。和我一起成为一天48杯水的人吧！多喝热水。谢谢合作！')
+        await bot.send_group_msg(group_id=group['feiwu'], message=f'大家好，我是本群的“提醒喝水小助手”，这是今天的第{drink_time}轮。希望此刻看到消息的人可以和我一起来喝一杯水。30分钟后的我继续提醒大家喝水。和我一起成为一天48杯水的人吧！多喝热水。谢谢合作！')
     except CQHttpError:
         pass
