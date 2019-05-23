@@ -9,6 +9,7 @@ def application(environ, start_response):
     print('xiao-ai pull finish')
     os.system('screen -X -S xiaoai quit')
     os.system('screen -S xiaoai')
+    os.system('screen -d xiaoai')
     os.system('python3 bot.py')
     print('xiao-ai restart!')
     return [b'Hello, XiaoAi!']
