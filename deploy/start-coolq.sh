@@ -1,3 +1,4 @@
+cd /home/yunyou/
 docker run -ti --rm --name cqhttp-xiaoai \
             -v $(pwd)/coolq:/home/user/coolq \
             -p 9000:9000 \
