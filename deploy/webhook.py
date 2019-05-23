@@ -7,4 +7,8 @@ def application(environ, start_response):
     os.system('cd ' + DeployPath)
     os.system('git pull --force')
     print('xiao-ai pull finish')
+    os.system('screen -S xiaoai -X quit')
+    os.system('screen -S xiaoai')
+    os.system('python3 bot.py')
+    print('xiao-ai restart!')
     return [b'Hello, XiaoAi!']
