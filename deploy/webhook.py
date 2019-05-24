@@ -1,16 +1,26 @@
 # coding=utf-8
 # webhook.py
 import os
-screen_name = 'xiaoai'
+import signal
+import time
+
 def application(environ, start_response):
     start_response('200 OK', [('Content-Type', 'text/html')])
     DeployPath = '/home/yunyou/github/xiao-ai/'
     os.system('cd ' + DeployPath)
     os.system('git pull --force')
     print('xiao-ai pull finish')
-    os.system(f'screen -X -S {screen_name} quit')
-    os.system(f'screen -S {screen_name}')
-    os.system('python3 bot.py')
-    os.system(f'screen -d {screen_name}')
-    print('xiao-ai restart!')
+    stopXiaoAi()
+    time.sleep(10)
+    startXiaoAi()
     return [b'Hello, XiaoAi!']
+
+def startXiaoAi():
+    os.system('nohup python3 bot.py &')
+    print('xiao-ai start!')
+
+
+def stopXiaoAi():
+    list = os.popen("ps -ef|grep python3|grep bot.py|grep -v grep|awk '{print $2}'").readlines()
+    for pid in list:
+        os.kill(int(pid),signal.SIGKILL)
